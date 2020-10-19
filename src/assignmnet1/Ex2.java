@@ -15,6 +15,9 @@ public class Ex2 {
         String fName = "Sam";
         String lName = "Samra";
         System.out.println(fName.concat(" ").concat(lName));
+        new Ex1().x = 1;
+        // new Ex1().y = 3; // not possible
+        new Ex1().z = 5;
     }
 
 }
