@@ -22,6 +22,8 @@ public class Ex1 {
 
     public static void main(String[] args) {
         int firstLetter = (int) 'a'; // casting is optional here
+        char secondLetter = 98;
+        System.out.println("Second letter is = " + secondLetter);
         int age = (int) 1.5;
         System.out.println("Value of firstLetter = " + firstLetter);
         System.out.println("Value of age = " + age);
@@ -29,6 +31,7 @@ public class Ex1 {
         new Ex1().z = 4;
         Ex1 inst1 = new Ex1();
         inst1.init();
+
     }
 
 }
