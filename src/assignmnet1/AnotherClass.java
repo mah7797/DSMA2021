@@ -9,7 +9,7 @@ package assignmnet1;
  *
  * @author Bilal
  */
-public class Ex2 {
+public class AnotherClass {
 
     public static void main(String[] args) {
         String fName = "Sam";

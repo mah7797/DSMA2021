@@ -31,7 +31,6 @@ public class Ex1 {
         new Ex1().z = 4;
         Ex1 inst1 = new Ex1();
         inst1.init();
-
     }
 
 }
