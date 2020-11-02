@@ -23,22 +23,31 @@ public class MovieDB {
             // 1- create a new array of larger size (BUFFER_SIZE * 2),
             //    then copy the previous elements,
             //    and finally add the new one
-            // 2- Arrays.copy()... check it from the JavaDoc
+            // 2- Arrays.copyOf()... check it from the JavaDoc
+            Movie[] newMoviesList = new Movie[moviesList.length + BUFFER_SIZE];
+            // DO NOT DO: newMoviesList = moviesList;
+            for (int i = 0; i < moviesList.length; i++) {
+                newMoviesList[i] = moviesList[i];
+            }
+            moviesList = newMoviesList;
+            // The following is equivalent to the above for loop
+            // moviesList = Arrays.copyOf(moviesList, moviesList.length + BUFFER_SIZE);
+
         }
         moviesList[effectiveNbMovies] = movie;
         effectiveNbMovies++;
     }
 
     void display() {
-        // Equivalent to
-//        for (int i = 0; i < moviesList.length; i++) {
-//            Movie movie = moviesList[i];
-//            System.out.println("Movie: " + movie.getName() + ", " + movie.getReleaseYear());
-//        }
-        // for each variable "movie" of type "Movie" in "moviesList", do...
-        for (Movie movie : moviesList) {
+        for (int i = 0; i < effectiveNbMovies; i++) {
+            Movie movie = moviesList[i];
             System.out.println("Movie: " + movie.getName() + ", " + movie.getReleaseYear());
         }
+        // Equivalent to
+        // for each variable "movie" of type "Movie" in "moviesList", do...
+//        for (Movie movie : moviesList) {
+//            System.out.println("Movie: " + movie.getName() + ", " + movie.getReleaseYear());
+//        }
     }
 
 }
