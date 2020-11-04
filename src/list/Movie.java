@@ -35,4 +35,9 @@ public class Movie {
         return releaseYear;
     }
 
+    @Override
+    public String toString() {
+        return "Movie: " + name + ", year: " + releaseYear;
+    }
+
 }
