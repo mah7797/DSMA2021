@@ -18,7 +18,7 @@ public class MainProgram {
 //        movieDB.add(new Movie("Wild Life", 2010));
 //        movieDB.display();
 
-        List movieDB = new LinkedList();
+        List movieDB = new ArrayList();
         //System.out.println("Before adding any element, the size is: " + movieDB.size());
         movieDB.add(new Movie("Conjuring", 2019));
         movieDB.add(new Movie("Imitation Game", 2016));

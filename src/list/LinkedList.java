@@ -39,12 +39,31 @@ public class LinkedList implements List {
 
     @Override
     public Object get(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Node current = head;
+        int count = 0;
+        while (current != null) {
+            if (count == index) {
+                return current.value;
+            }
+            count++;
+            current = current.next;
+        }
+
+        throw new IndexOutOfBoundsException("Invalid index " + index);
     }
 
     @Override
     public int indexOf(Object element) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int index = 0;
+        Node current = head;
+        while (current != null) {
+            if (current.value.equals(element)) {
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+        return -1;
     }
 
     @Override
@@ -59,7 +78,27 @@ public class LinkedList implements List {
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        int count = 0;
+//        Node current = head;
+//        while(current != null)
+//        {
+//            current = current.next;
+//            count++;
+//        }
+//        return count;
+
+        if (head == null) {
+            return 0;
+        } else {
+            // head != null
+            int size = 1;
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+                size++;
+            }
+            return size;
+        }
     }
 
 }
